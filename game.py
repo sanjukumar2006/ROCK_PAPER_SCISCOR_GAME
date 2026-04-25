@@ -1,0 +1,55 @@
+import random as r
+
+object = ["rock","paper","scissor"]
+user_point=0
+bot_point=0
+
+while True:
+
+    bot_choice=r.choice(object)
+    
+    # add try and error for error handeling
+    human_choice=input("enter your choice: ").lower()
+    print("the bot has choosen:",bot_choice)
+    if bot_choice == human_choice:
+        print("DRAW, no points to anyone")
+    elif bot_choice != human_choice:
+        if bot_choice=="scissor" and human_choice=="rock":
+            user_point+=1
+            print("you win, plus 1 point to human\nnow total point of both is\n","human point =",user_point,"\nbot point=",bot_point)
+       
+        elif bot_choice=="paper" and human_choice=="scissor":
+            user_point+=1
+            print("you win, plus 1 point to human\nnow total point of both is\n","human point =",user_point,"\nbot point=",bot_point)
+        
+        elif bot_choice=="rock" and human_choice=="paper":
+            user_point+=1
+            print("you win, plus 1 point to human\nnow total point of both is\n","human point =",user_point,"\nbot point=",bot_point)
+        elif bot_choice=="paper" and human_choice=="rock":
+            bot_point+=1
+            print("you lose, plus 1 point to bot\nnow total point of both is\n","human point =",user_point,"\nbot point=",bot_point)
+        elif bot_choice=="rock" and human_choice=="scissor":
+            bot_point+=1
+            print("you lose, plus 1 point to bot\nnow total point of both is\n","human point =",user_point,"\nbot point=",bot_point)
+        elif bot_choice=="scissor" and human_choice=="paper":
+            bot_point+=1
+            print("you lose, plus 1 point to bot\nnow total point of both is\n","human point =",user_point,"\nbot point=",bot_point)
+        
+        elif human_choice=="exit":
+            print("THANKyou for playing the game\n","your total points were",user_point,"\nand bot point was",bot_point)
+            break
+
+        else:
+            print("wrong input")
+    
+    
+    
+    
+    
+    elif human_choice=="exit":
+        print("THANKyou for playing the game\n","your total points were",user_point,"\nand bot point was",bot_point)
+        break
+
+
+
+
